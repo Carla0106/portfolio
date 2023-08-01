@@ -19,6 +19,10 @@
 }
 
 @layer base {
+  .hi{
+    font-size: 30px;
+    font-weight: bold;
+  }
   body {
     @apply bg-secondary overflow-hidden leading-relaxed;
   }
