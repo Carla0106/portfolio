@@ -1,26 +1,26 @@
 import { Particles } from 'react-tsparticles';
 import { loadFull } from 'tsparticles';
-import React, {useCallback} from 'react';
+import React, { useCallback } from 'react';
 
 const ParticlesContainer = () => {
-  // init 
+  // Inicialización 
   const particlesInit = useCallback(async (engine) => {
-    await loadFull (engine);
-  }, [] );
+    await loadFull(engine);
+  }, []);
 
   const particlesLoaded = useCallback(async () => {}, []);
- 
-  return(
+
+  return (
     <Particles
       className='w-full h-full absolute translate-z-0'
-      id= 'tsparticles'
+      id='tsparticles'
       init={particlesInit}
       loaded={particlesLoaded}
       options={{
-        fullScreen: { enable:false },
+        fullScreen: { enable: false },
         background: {
           color: {
-            value:'',
+            value: '',
           },
         },
         fpsLimit: 120,
@@ -38,24 +38,28 @@ const ParticlesContainer = () => {
           },
           modes: {
             push: {
-              quantity: 90
+              quantity: 90,
             },
             repulse: {
               distance: 200,
               duration: 0.4,
-            }
-          }
+            },
+          },
         },
         particles: {
           color: {
             value: '#e68e2e',
           },
-          links:{
-            color:' #f5d393',
+          links: {
+            color: '#f5d393', // Color de las líneas que conectan las partículas
             distance: 150,
             enable: true,
             opacity: 0.5,
-            width: 1
+            width: 1,
+            // Configuración de las líneas cuando las partículas son repelidas (onHover)
+            warp: true, // Nueva propiedad para la deformación de las líneas
+            warpSpeed: 0.3, // Nueva propiedad para la velocidad de deformación
+            warpLength: 5, // Nueva propiedad para la longitud de deformación
           },
           collisions: {
             enable: true,
@@ -64,27 +68,27 @@ const ParticlesContainer = () => {
             direction: 'none',
             enable: true,
             outModes: {
-              default: 'bounce'
+              default: 'bounce',
             },
             random: false,
             speed: 1,
-            straight: false
+            straight: false,
           },
           number: {
             density: {
               enable: true,
-              area: 800
+              area: 800,
             },
-            value: 80
+            value: 80,
           },
           opacity: {
             value: 0.5,
           },
           shape: {
-            type: 'circle', 
+            type: 'circle',
           },
           size: {
-            value: {min: 1, max: 5},
+            value: { min: 1, max: 5 },
           },
         },
         detectRetina: true,
