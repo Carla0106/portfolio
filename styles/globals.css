@@ -52,4 +52,13 @@
   .textarea {
     @apply w-full h-[180px] p-6 capitalize rounded-lg resize-none;
   }
+  @media (max-width: 800px) {
+    .hi {
+      font-size: 4vw;
+      margin: auto;
+    }
+    #textP{
+      margin: auto ;
+    }
+  }
 }
